@@ -1,5 +1,7 @@
 var App = {
 
+  //test LiveShare
+
   $spinner: $('.spinner img'),
 
   username: 'anonymous',
