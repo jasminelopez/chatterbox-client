@@ -26,7 +26,6 @@ var App = {
           //do nothing
         } else {
           $('#chats').append(MessageView.render(data.results[i]));
-        // }
         }
       }
       console.log(data.results);

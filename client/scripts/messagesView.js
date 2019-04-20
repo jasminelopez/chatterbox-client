@@ -6,6 +6,9 @@ var MessagesView = {
   },
 
   render: function() {
+  },
+  //append the message passed in- to the chat DOM element 
+  renderMessage: function (message) {
+    MessagesView.$chats.prepend(MessageView.render(message));
   }
-
 };

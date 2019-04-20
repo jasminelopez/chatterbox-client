@@ -12,13 +12,16 @@ var FormView = {
     var message = Messages.addMessage(App.username, $('#message').val());
     //posting to the server
     Parse.create(message);
+    //MessageView.render(data.results[i]) 
+    MessagesView.renderMessage(message);
+    $('#message').val('');
     FormView.setStatus(true);
     console.log('click!');
   },
 
   setStatus: function(active) {
     var status = active ? 'true' : null;
-    FormView.$form.find('input[type=submit]').attr('disabled', status);
+    //FormView.$form.find('input[type=submit]').attr('disabled', status);
   }
 
 };
