@@ -14,6 +14,7 @@ var App = {
 
     // Fetch initial batch of messages
     App.startSpinner();
+    App.fetch();
     App.fetch(App.stopSpinner);
 
   },
@@ -21,10 +22,13 @@ var App = {
   fetch: function(callback = ()=>{}) {
     Parse.readAll((data) => {
       // examine the response from the server request:
+      for (var i = 0; i < data.length; i++) {
+        $('#chats').prepend(template(data[i]));
+      }
       console.log(data);
-
-      callback();
+      
     });
+    callback();
   },
 
   startSpinner: function() {

@@ -1,4 +1,3 @@
-//constructor object
 var MessagesView = {
 
   $chats: $('#chats'), //div on index.html

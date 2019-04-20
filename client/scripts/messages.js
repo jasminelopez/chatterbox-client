@@ -1,12 +1,13 @@
 var Messages = {
   //constructor object
-  makeMessage: function (username, message) {
+  makeMessage: function (username, text, roomname) {
     this.username = username;
-    this.message = message;
+    this.text = text;
+    this.roomname = roomname;
   },
 
-  addMessage: function (username, message) {
-    var message = new this.makeMessage(username, message);
+  addMessage: function (username, text, roomname) {
+    var message = new this.makeMessage(username, text, roomname);
     return message;
   }
 
