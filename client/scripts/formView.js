@@ -9,7 +9,10 @@ var FormView = {
   handleSubmit: function(event) {
     // Stop the browser from submitting the form
     event.preventDefault();
-    
+    var message = Messages.addMessage(App.username, $('#message').val());
+    //posting to the server
+    Parse.create(message);
+    FormView.setStatus(true);
     console.log('click!');
   },
 

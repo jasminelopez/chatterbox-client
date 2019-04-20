@@ -1,6 +1,5 @@
 var App = {
 
-  //test LiveShare
 
   $spinner: $('.spinner img'),
 

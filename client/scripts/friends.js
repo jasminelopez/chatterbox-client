@@ -1,3 +1,5 @@
+
+//constructor object
 var Friends = {
 
 
