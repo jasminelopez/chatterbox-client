@@ -1,6 +1,5 @@
 var App = {
 
-
   $spinner: $('.spinner img'),
 
   username: 'anonymous',
@@ -14,19 +13,23 @@ var App = {
 
     // Fetch initial batch of messages
     App.startSpinner();
-    App.fetch();
     App.fetch(App.stopSpinner);
 
   },
 
   fetch: function(callback = ()=>{}) {
+    
     Parse.readAll((data) => {
       // examine the response from the server request:
-      for (var i = 0; i < data.length; i++) {
-        $('#chats').prepend(template(data[i]));
+      for (var i = 0; i < data.results.length; i++) {
+        if (!data.results[i].username || !data.results[i].text) {
+          //do nothing
+        } else {
+          $('#chats').append(MessageView.render(data.results[i]));
+        // }
+        }
       }
-      console.log(data);
-      
+      console.log(data.results);
     });
     callback();
   },
