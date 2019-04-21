@@ -22,6 +22,12 @@ var App = {
     Parse.readAll((data) => {
       // examine the response from the server request:
       for (var i = 0; i < data.results.length; i++) {
+        //if it has a roomname and doesn't already exist in the <select> <select>
+        if (data.results[i].roomname) {
+          //roomname string 
+          //var childs = $('#rooms select').children();
+          RoomsView.renderRoom(data.results[i].roomname);
+        }
         if (!data.results[i].username || !data.results[i].text) {
           //do nothing
         } else {
